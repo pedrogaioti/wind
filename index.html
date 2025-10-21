@@ -4,7 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wind - Virtual Airline</title>
+    <meta name="description" content="Wind Airways - Virtual Airline homologada para IVAO e VATSIM. Experimente a aviação virtual de forma profissional.">
+    <meta name="keywords" content="aviação virtual, virtual airline, IVAO, VATSIM, simulador de voo">
+    <title>Wind Airways - Virtual Airline</title>
+    
+    <!-- Estilos -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
@@ -25,7 +29,7 @@
         <nav class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
                 <div class="flex items-center space-x-3">
-                    <img src="./assets/img/wind.png" alt="Wind Airways" class="w-12 h-12 rounded-lg shadow-md">
+                    <img src="./assets/img/wind.png" alt="Wind Airways Logo" class="w-12 h-12 rounded-lg shadow-md">
                     <div>
                         <h1 class="text-2xl font-bold text-slate-800">Wind Airways</h1>
                         <p class="text-sm text-slate-500">Virtual Airline</p>
@@ -36,8 +40,7 @@
                     <a href="#home" class="nav-link text-slate-700 hover:text-sky-600 font-medium">Home</a>
                     <a href="#fleet" class="nav-link text-slate-700 hover:text-sky-600 font-medium">Frota</a>
                     <a href="#pilots" class="nav-link text-slate-700 hover:text-sky-600 font-medium">Pilotos</a>
-                    <a href="#statistics"
-                        class="nav-link text-slate-700 hover:text-sky-600 font-medium">Estatísticas</a>
+                    <a href="#statistics" class="nav-link text-slate-700 hover:text-sky-600 font-medium">Estatísticas</a>
                     <a href="#livemap" class="nav-link text-slate-700 hover:text-sky-600 font-medium">Mapa ao Vivo</a>
                 </div>
 
@@ -54,9 +57,7 @@
         <div class="container mx-auto px-6 text-center">
             <div class="slide-in">
                 <h1 class="text-5xl md:text-7xl font-bold text-slate-800 mb-6">
-                    Bem-vindo à <span
-                        class="text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600">Wind
-                        </span>
+                    Bem-vindo à <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600">Wind</span>
                 </h1>
                 <p class="text-xl text-slate-600 mb-12 max-w-3xl mx-auto">
                     Experimente a aviação virtual de forma profissional com nossa frota moderna e comunidade dedicada.
@@ -65,20 +66,16 @@
             </div>
 
             <div class="floating">
-                <svg class="w-96 h-48 mx-auto mb-8" viewBox="0 0 400 200" fill="none">
+                <svg class="w-96 h-48 mx-auto mb-8" viewBox="0 0 400 200" fill="none" aria-label="Ilustração de avião">
                     <defs>
                         <linearGradient id="planeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
                             <stop offset="0%" style="stop-color:#0ea5e9" />
                             <stop offset="100%" style="stop-color:#0284c7" />
                         </linearGradient>
                     </defs>
-                    <!-- Fuselagem -->
                     <ellipse cx="200" cy="100" rx="120" ry="15" fill="url(#planeGradient)" />
-                    <!-- Asas -->
                     <ellipse cx="180" cy="100" rx="80" ry="8" fill="#0369a1" />
-                    <!-- Cauda -->
                     <path d="M320 100 L350 85 L350 115 Z" fill="#0369a1" />
-                    <!-- Janelas -->
                     <circle cx="150" cy="95" r="3" fill="white" opacity="0.8" />
                     <circle cx="170" cy="95" r="3" fill="white" opacity="0.8" />
                     <circle cx="190" cy="95" r="3" fill="white" opacity="0.8" />
@@ -99,8 +96,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                 <!-- A320neo -->
                 <div class="card-hover bg-white rounded-2xl p-6 shadow-lg">
-                    <div
-                        class="w-16 h-16 bg-gradient-to-br from-sky-400 to-blue-600 rounded-xl flex items-center justify-center mb-4">
+                    <div class="w-16 h-16 bg-gradient-to-br from-sky-400 to-blue-600 rounded-xl flex items-center justify-center mb-4">
                         <i class="fas fa-plane text-white text-2xl"></i>
                     </div>
                     <h3 class="text-xl font-bold text-slate-800 mb-2">Airbus A320neo</h3>
@@ -113,8 +109,7 @@
 
                 <!-- B737-800 -->
                 <div class="card-hover bg-white rounded-2xl p-6 shadow-lg">
-                    <div
-                        class="w-16 h-16 bg-gradient-to-br from-sky-400 to-blue-600 rounded-xl flex items-center justify-center mb-4">
+                    <div class="w-16 h-16 bg-gradient-to-br from-sky-400 to-blue-600 rounded-xl flex items-center justify-center mb-4">
                         <i class="fas fa-plane text-white text-2xl"></i>
                     </div>
                     <h3 class="text-xl font-bold text-slate-800 mb-2">Boeing 737-800</h3>
@@ -127,8 +122,7 @@
 
                 <!-- B787-9 -->
                 <div class="card-hover bg-white rounded-2xl p-6 shadow-lg">
-                    <div
-                        class="w-16 h-16 bg-gradient-to-br from-sky-400 to-blue-600 rounded-xl flex items-center justify-center mb-4">
+                    <div class="w-16 h-16 bg-gradient-to-br from-sky-400 to-blue-600 rounded-xl flex items-center justify-center mb-4">
                         <i class="fas fa-plane text-white text-2xl"></i>
                     </div>
                     <h3 class="text-xl font-bold text-slate-800 mb-2">Boeing 787-9</h3>
@@ -141,8 +135,7 @@
 
                 <!-- B777-300ER -->
                 <div class="card-hover bg-white rounded-2xl p-6 shadow-lg">
-                    <div
-                        class="w-16 h-16 bg-gradient-to-br from-sky-400 to-blue-600 rounded-xl flex items-center justify-center mb-4">
+                    <div class="w-16 h-16 bg-gradient-to-br from-sky-400 to-blue-600 rounded-xl flex items-center justify-center mb-4">
                         <i class="fas fa-plane text-white text-2xl"></i>
                     </div>
                     <h3 class="text-xl font-bold text-slate-800 mb-2">Boeing 777-300ER</h3>
@@ -155,8 +148,7 @@
 
                 <!-- CJ4 -->
                 <div class="card-hover bg-white rounded-2xl p-6 shadow-lg">
-                    <div
-                        class="w-16 h-16 bg-gradient-to-br from-sky-400 to-blue-600 rounded-xl flex items-center justify-center mb-4">
+                    <div class="w-16 h-16 bg-gradient-to-br from-sky-400 to-blue-600 rounded-xl flex items-center justify-center mb-4">
                         <i class="fas fa-fighter-jet text-white text-2xl"></i>
                     </div>
                     <h3 class="text-xl font-bold text-slate-800 mb-2">Cessna Citation CJ4</h3>
@@ -169,8 +161,7 @@
 
                 <!-- ATR 72-600 -->
                 <div class="card-hover bg-white rounded-2xl p-6 shadow-lg">
-                    <div
-                        class="w-16 h-16 bg-gradient-to-br from-sky-400 to-blue-600 rounded-xl flex items-center justify-center mb-4">
+                    <div class="w-16 h-16 bg-gradient-to-br from-sky-400 to-blue-600 rounded-xl flex items-center justify-center mb-4">
                         <i class="fas fa-plane text-white text-2xl"></i>
                     </div>
                     <h3 class="text-xl font-bold text-slate-800 mb-2">ATR 72-600</h3>
@@ -183,8 +174,7 @@
 
                 <!-- A306F -->
                 <div class="card-hover bg-white rounded-2xl p-6 shadow-lg">
-                    <div
-                        class="w-16 h-16 bg-gradient-to-br from-sky-400 to-blue-600 rounded-xl flex items-center justify-center mb-4">
+                    <div class="w-16 h-16 bg-gradient-to-br from-sky-400 to-blue-600 rounded-xl flex items-center justify-center mb-4">
                         <i class="fas fa-shipping-fast text-white text-2xl"></i>
                     </div>
                     <h3 class="text-xl font-bold text-slate-800 mb-2">Airbus A300-600F</h3>
@@ -196,8 +186,7 @@
                 </div>
 
                 <!-- Slot para expansão -->
-                <div
-                    class="card-hover bg-gradient-to-br from-slate-100 to-slate-200 rounded-2xl p-6 shadow-lg border-2 border-dashed border-slate-300">
+                <div class="card-hover bg-gradient-to-br from-slate-100 to-slate-200 rounded-2xl p-6 shadow-lg border-2 border-dashed border-slate-300">
                     <div class="w-16 h-16 bg-slate-300 rounded-xl flex items-center justify-center mb-4">
                         <i class="fas fa-plus text-slate-500 text-2xl"></i>
                     </div>
@@ -223,8 +212,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                 <!-- Pilot 1 -->
                 <div class="card-hover bg-white rounded-2xl p-6 shadow-lg text-center">
-                    <div
-                        class="w-20 h-20 bg-gradient-to-br from-sky-400 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <div class="w-20 h-20 bg-gradient-to-br from-sky-400 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
                         <i class="fas fa-user-tie text-white text-2xl"></i>
                     </div>
                     <h3 class="text-xl font-bold text-slate-800 mb-1">Capitão Silva</h3>
@@ -238,8 +226,7 @@
 
                 <!-- Pilot 2 -->
                 <div class="card-hover bg-white rounded-2xl p-6 shadow-lg text-center">
-                    <div
-                        class="w-20 h-20 bg-gradient-to-br from-sky-400 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <div class="w-20 h-20 bg-gradient-to-br from-sky-400 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
                         <i class="fas fa-user-tie text-white text-2xl"></i>
                     </div>
                     <h3 class="text-xl font-bold text-slate-800 mb-1">Comandante Santos</h3>
@@ -253,8 +240,7 @@
 
                 <!-- Pilot 3 -->
                 <div class="card-hover bg-white rounded-2xl p-6 shadow-lg text-center">
-                    <div
-                        class="w-20 h-20 bg-gradient-to-br from-sky-400 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <div class="w-20 h-20 bg-gradient-to-br from-sky-400 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
                         <i class="fas fa-user-tie text-white text-2xl"></i>
                     </div>
                     <h3 class="text-xl font-bold text-slate-800 mb-1">Piloto Oliveira</h3>
@@ -268,8 +254,7 @@
 
                 <!-- Pilot 4 -->
                 <div class="card-hover bg-white rounded-2xl p-6 shadow-lg text-center">
-                    <div
-                        class="w-20 h-20 bg-gradient-to-br from-sky-400 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <div class="w-20 h-20 bg-gradient-to-br from-sky-400 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
                         <i class="fas fa-user-tie text-white text-2xl"></i>
                     </div>
                     <h3 class="text-xl font-bold text-slate-800 mb-1">Capitã Costa</h3>
@@ -283,8 +268,7 @@
 
                 <!-- Pilot 5 -->
                 <div class="card-hover bg-white rounded-2xl p-6 shadow-lg text-center">
-                    <div
-                        class="w-20 h-20 bg-gradient-to-br from-sky-400 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <div class="w-20 h-20 bg-gradient-to-br from-sky-400 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
                         <i class="fas fa-user-tie text-white text-2xl"></i>
                     </div>
                     <h3 class="text-xl font-bold text-slate-800 mb-1">Comandante Lima</h3>
@@ -298,8 +282,7 @@
 
                 <!-- Pilot 6 -->
                 <div class="card-hover bg-white rounded-2xl p-6 shadow-lg text-center">
-                    <div
-                        class="w-20 h-20 bg-gradient-to-br from-sky-400 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <div class="w-20 h-20 bg-gradient-to-br from-sky-400 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
                         <i class="fas fa-user-tie text-white text-2xl"></i>
                     </div>
                     <h3 class="text-xl font-bold text-slate-800 mb-1">Piloto Ferreira</h3>
@@ -312,8 +295,7 @@
                 </div>
 
                 <!-- Join CTA -->
-                <div
-                    class="card-hover bg-gradient-to-br from-sky-500 to-blue-600 rounded-2xl p-6 shadow-lg text-center text-white">
+                <div class="card-hover bg-gradient-to-br from-sky-500 to-blue-600 rounded-2xl p-6 shadow-lg text-center text-white">
                     <div class="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
                         <i class="fas fa-plus text-white text-2xl"></i>
                     </div>
@@ -328,8 +310,7 @@
 
                 <!-- Pilot 8 -->
                 <div class="card-hover bg-white rounded-2xl p-6 shadow-lg text-center">
-                    <div
-                        class="w-20 h-20 bg-gradient-to-br from-sky-400 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <div class="w-20 h-20 bg-gradient-to-br from-sky-400 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
                         <i class="fas fa-user-tie text-white text-2xl"></i>
                     </div>
                     <h3 class="text-xl font-bold text-slate-800 mb-1">Capitão Rocha</h3>
@@ -355,41 +336,37 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
                 <!-- Total Flights -->
                 <div class="bg-white rounded-2xl p-8 shadow-lg text-center">
-                    <div
-                        class="w-16 h-16 bg-gradient-to-br from-sky-400 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <div class="w-16 h-16 bg-gradient-to-br from-sky-400 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4">
                         <i class="fas fa-plane-departure text-white text-2xl"></i>
                     </div>
-                    <div class="stats-counter" id="totalFlights">2,847</div>
+                    <div class="stats-counter" id="totalFlights">0</div>
                     <p class="text-slate-600 font-medium">Voos Realizados</p>
                 </div>
 
                 <!-- Flight Hours -->
                 <div class="bg-white rounded-2xl p-8 shadow-lg text-center">
-                    <div
-                        class="w-16 h-16 bg-gradient-to-br from-sky-400 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <div class="w-16 h-16 bg-gradient-to-br from-sky-400 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4">
                         <i class="fas fa-clock text-white text-2xl"></i>
                     </div>
-                    <div class="stats-counter" id="flightHours">18,542</div>
+                    <div class="stats-counter" id="flightHours">0</div>
                     <p class="text-slate-600 font-medium">Horas de Voo</p>
                 </div>
 
                 <!-- Active Pilots -->
                 <div class="bg-white rounded-2xl p-8 shadow-lg text-center">
-                    <div
-                        class="w-16 h-16 bg-gradient-to-br from-sky-400 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <div class="w-16 h-16 bg-gradient-to-br from-sky-400 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4">
                         <i class="fas fa-users text-white text-2xl"></i>
                     </div>
-                    <div class="stats-counter" id="activePilots">127</div>
+                    <div class="stats-counter" id="activePilots">0</div>
                     <p class="text-slate-600 font-medium">Pilotos Ativos</p>
                 </div>
 
                 <!-- Routes -->
                 <div class="bg-white rounded-2xl p-8 shadow-lg text-center">
-                    <div
-                        class="w-16 h-16 bg-gradient-to-br from-sky-400 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <div class="w-16 h-16 bg-gradient-to-br from-sky-400 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4">
                         <i class="fas fa-route text-white text-2xl"></i>
                     </div>
-                    <div class="stats-counter" id="routes">89</div>
+                    <div class="stats-counter" id="routes">0</div>
                     <p class="text-slate-600 font-medium">Rotas Ativas</p>
                 </div>
             </div>
@@ -412,8 +389,7 @@
                         <tbody>
                             <tr class="border-b border-slate-100 hover:bg-slate-50">
                                 <td class="py-3 px-4">
-                                    <span
-                                        class="inline-flex items-center justify-center w-8 h-8 bg-yellow-500 text-white rounded-full font-bold">1</span>
+                                    <span class="inline-flex items-center justify-center w-8 h-8 bg-yellow-500 text-white rounded-full font-bold">1</span>
                                 </td>
                                 <td class="py-3 px-4 font-medium text-slate-800">Comandante Santos</td>
                                 <td class="py-3 px-4 text-sky-600">WIN002</td>
@@ -423,8 +399,7 @@
                             </tr>
                             <tr class="border-b border-slate-100 hover:bg-slate-50">
                                 <td class="py-3 px-4">
-                                    <span
-                                        class="inline-flex items-center justify-center w-8 h-8 bg-slate-400 text-white rounded-full font-bold">2</span>
+                                    <span class="inline-flex items-center justify-center w-8 h-8 bg-slate-400 text-white rounded-full font-bold">2</span>
                                 </td>
                                 <td class="py-3 px-4 font-medium text-slate-800">Piloto Ferreira</td>
                                 <td class="py-3 px-4 text-sky-600">WIN006</td>
@@ -434,8 +409,7 @@
                             </tr>
                             <tr class="border-b border-slate-100 hover:bg-slate-50">
                                 <td class="py-3 px-4">
-                                    <span
-                                        class="inline-flex items-center justify-center w-8 h-8 bg-amber-600 text-white rounded-full font-bold">3</span>
+                                    <span class="inline-flex items-center justify-center w-8 h-8 bg-amber-600 text-white rounded-full font-bold">3</span>
                                 </td>
                                 <td class="py-3 px-4 font-medium text-slate-800">Capitã Costa</td>
                                 <td class="py-3 px-4 text-sky-600">WIN004</td>
@@ -445,8 +419,7 @@
                             </tr>
                             <tr class="border-b border-slate-100 hover:bg-slate-50">
                                 <td class="py-3 px-4">
-                                    <span
-                                        class="inline-flex items-center justify-center w-8 h-8 bg-slate-300 text-slate-700 rounded-full font-bold">4</span>
+                                    <span class="inline-flex items-center justify-center w-8 h-8 bg-slate-300 text-slate-700 rounded-full font-bold">4</span>
                                 </td>
                                 <td class="py-3 px-4 font-medium text-slate-800">Capitão Silva</td>
                                 <td class="py-3 px-4 text-sky-600">WIN001</td>
@@ -456,8 +429,7 @@
                             </tr>
                             <tr class="hover:bg-slate-50">
                                 <td class="py-3 px-4">
-                                    <span
-                                        class="inline-flex items-center justify-center w-8 h-8 bg-slate-300 text-slate-700 rounded-full font-bold">5</span>
+                                    <span class="inline-flex items-center justify-center w-8 h-8 bg-slate-300 text-slate-700 rounded-full font-bold">5</span>
                                 </td>
                                 <td class="py-3 px-4 font-medium text-slate-800">Capitão Rocha</td>
                                 <td class="py-3 px-4 text-sky-600">WIN007</td>
@@ -481,12 +453,9 @@
             </div>
 
             <div class="bg-white rounded-2xl p-8 shadow-lg">
-                <div
-                    class="bg-gradient-to-br from-slate-100 to-slate-200 rounded-xl h-96 flex items-center justify-center relative overflow-hidden">
-                    <!-- Placeholder para integração com Newsky API -->
+                <div class="bg-gradient-to-br from-slate-100 to-slate-200 rounded-xl h-96 flex items-center justify-center relative overflow-hidden">
                     <div class="text-center z-10">
-                        <div
-                            class="w-20 h-20 bg-gradient-to-br from-sky-400 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <div class="w-20 h-20 bg-gradient-to-br from-sky-400 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
                             <i class="fas fa-map-marked-alt text-white text-3xl"></i>
                         </div>
                         <h3 class="text-2xl font-bold text-slate-700 mb-2">Mapa Interativo</h3>
@@ -497,21 +466,14 @@
                         </div>
                     </div>
 
-                    <!-- Elementos decorativos do mapa -->
                     <div class="absolute inset-0 opacity-20">
                         <svg class="w-full h-full" viewBox="0 0 400 300">
-                            <!-- Linhas de rota simuladas -->
-                            <path d="M50 150 Q200 50 350 150" stroke="#0ea5e9" stroke-width="2" fill="none"
-                                stroke-dasharray="5,5">
-                                <animate attributeName="stroke-dashoffset" values="0;10" dur="2s"
-                                    repeatCount="indefinite" />
+                            <path d="M50 150 Q200 50 350 150" stroke="#0ea5e9" stroke-width="2" fill="none" stroke-dasharray="5,5">
+                                <animate attributeName="stroke-dashoffset" values="0;10" dur="2s" repeatCount="indefinite" />
                             </path>
-                            <path d="M100 100 Q250 200 380 120" stroke="#0ea5e9" stroke-width="2" fill="none"
-                                stroke-dasharray="5,5">
-                                <animate attributeName="stroke-dashoffset" values="0;10" dur="3s"
-                                    repeatCount="indefinite" />
+                            <path d="M100 100 Q250 200 380 120" stroke="#0ea5e9" stroke-width="2" fill="none" stroke-dasharray="5,5">
+                                <animate attributeName="stroke-dashoffset" values="0;10" dur="3s" repeatCount="indefinite" />
                             </path>
-                            <!-- Pontos de aeroportos -->
                             <circle cx="80" cy="150" r="4" fill="#0ea5e9" />
                             <circle cx="320" cy="150" r="4" fill="#0ea5e9" />
                             <circle cx="150" cy="100" r="4" fill="#0ea5e9" />
@@ -520,7 +482,6 @@
                     </div>
                 </div>
 
-                <!-- Status dos voos -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
                     <div class="text-center">
                         <div class="text-2xl font-bold text-sky-600 mb-1">7</div>
@@ -543,11 +504,9 @@
     <footer class="bg-slate-800 text-white py-16">
         <div class="container mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-                <!-- Company Info -->
                 <div>
                     <div class="flex items-center space-x-3 mb-4">
-                        <div
-                            class="w-10 h-10 bg-gradient-to-br from-sky-400 to-blue-600 rounded-full flex items-center justify-center">
+                        <div class="w-10 h-10 bg-gradient-to-br from-sky-400 to-blue-600 rounded-full flex items-center justify-center">
                             <i class="fas fa-plane text-white"></i>
                         </div>
                         <div>
@@ -555,24 +514,19 @@
                             <p class="text-slate-400 text-sm">Virtual Airline</p>
                         </div>
                     </div>
-                    <p class="text-slate-400 mb-4">Experiência profissional em aviação virtual com homologação IVAO e
-                        VATSIM.</p>
+                    <p class="text-slate-400 mb-4">Experiência profissional em aviação virtual com homologação IVAO e VATSIM.</p>
                 </div>
 
-                <!-- Quick Links -->
                 <div>
                     <h4 class="text-lg font-semibold mb-4">Links Rápidos</h4>
                     <ul class="space-y-2">
                         <li><a href="#home" class="text-slate-400 hover:text-sky-400 transition-colors">Home</a></li>
                         <li><a href="#fleet" class="text-slate-400 hover:text-sky-400 transition-colors">Frota</a></li>
-                        <li><a href="#pilots" class="text-slate-400 hover:text-sky-400 transition-colors">Pilotos</a>
-                        </li>
-                        <li><a href="#statistics"
-                                class="text-slate-400 hover:text-sky-400 transition-colors">Estatísticas</a></li>
+                        <li><a href="#pilots" class="text-slate-400 hover:text-sky-400 transition-colors">Pilotos</a></li>
+                        <li><a href="#statistics" class="text-slate-400 hover:text-sky-400 transition-colors">Estatísticas</a></li>
                     </ul>
                 </div>
 
-                <!-- Networks -->
                 <div>
                     <h4 class="text-lg font-semibold mb-4">Redes de Voo</h4>
                     <div class="space-y-3">
@@ -594,24 +548,19 @@
                     </div>
                 </div>
 
-                <!-- Social Media -->
                 <div>
                     <h4 class="text-lg font-semibold mb-4">Redes Sociais</h4>
                     <div class="flex space-x-4">
-                        <a href="#"
-                            class="w-10 h-10 bg-slate-700 rounded-full flex items-center justify-center hover:bg-sky-600 transition-colors">
+                        <a href="#" class="w-10 h-10 bg-slate-700 rounded-full flex items-center justify-center hover:bg-sky-600 transition-colors">
                             <i class="fab fa-discord"></i>
                         </a>
-                        <a href="#"
-                            class="w-10 h-10 bg-slate-700 rounded-full flex items-center justify-center hover:bg-sky-600 transition-colors">
+                        <a href="#" class="w-10 h-10 bg-slate-700 rounded-full flex items-center justify-center hover:bg-sky-600 transition-colors">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="#"
-                            class="w-10 h-10 bg-slate-700 rounded-full flex items-center justify-center hover:bg-sky-600 transition-colors">
+                        <a href="#" class="w-10 h-10 bg-slate-700 rounded-full flex items-center justify-center hover:bg-sky-600 transition-colors">
                             <i class="fab fa-youtube"></i>
                         </a>
-                        <a href="#"
-                            class="w-10 h-10 bg-slate-700 rounded-full flex items-center justify-center hover:bg-sky-600 transition-colors">
+                        <a href="#" class="w-10 h-10 bg-slate-700 rounded-full flex items-center justify-center hover:bg-sky-600 transition-colors">
                             <i class="fab fa-facebook"></i>
                         </a>
                     </div>
@@ -627,90 +576,7 @@
         </div>
     </footer>
 
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Animate statistics counters
-        function animateCounter(element, target) {
-            let current = 0;
-            const increment = target / 100;
-            const timer = setInterval(() => {
-                current += increment;
-                if (current >= target) {
-                    current = target;
-                    clearInterval(timer);
-                }
-                element.textContent = Math.floor(current).toLocaleString();
-            }, 20);
-        }
-
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    if (entry.target.classList.contains('slide-in')) {
-                        entry.target.style.animationDelay = '0.2s';
-                        entry.target.style.animationFillMode = 'forwards';
-                    }
-
-                    // Animate counters when statistics section is visible
-                    if (entry.target.id === 'statistics') {
-                        setTimeout(() => {
-                            animateCounter(document.getElementById('totalFlights'), 2847);
-                            animateCounter(document.getElementById('flightHours'), 18542);
-                            animateCounter(document.getElementById('activePilots'), 127);
-                            animateCounter(document.getElementById('routes'), 89);
-                        }, 500);
-                    }
-                }
-            });
-        }, observerOptions);
-
-        // Observe elements for animation
-        document.querySelectorAll('.slide-in').forEach(el => observer.observe(el));
-        observer.observe(document.getElementById('statistics'));
-
-        // Mobile menu toggle (if needed)
-        const mobileMenuButton = document.querySelector('[data-mobile-menu]');
-        const mobileMenu = document.querySelector('[data-mobile-menu-content]');
-
-        if (mobileMenuButton && mobileMenu) {
-            mobileMenuButton.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
-        }
-
-        // Add loading animation to external links
-        document.querySelectorAll('a[target="_blank"]').forEach(link => {
-            link.addEventListener('click', function () {
-                const icon = this.querySelector('i');
-                if (icon) {
-                    icon.classList.add('fa-spin');
-                    setTimeout(() => {
-                        icon.classList.remove('fa-spin');
-                    }, 1000);
-                }
-            });
-        });
-    </script>
-    <script>(function () { function c() { var b = a.contentDocument || a.contentWindow.document; if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'991ade8134f27df4',t:'MTc2MDk4Nzk5MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();</script>
+    <!-- Scripts -->
     <script src="./assets/js/main.js"></script>
 </body>
 
