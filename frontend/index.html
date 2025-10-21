@@ -218,10 +218,7 @@
 <script>
     // IDs dos pilotos que queremos mostrar
     const pilotIds = [
-        "6647a64ca7f3ea00196bd5d3",
-        "6647a64ca7f3ea00196bd5d9",
-        "6647a64ca7f3ea00196bd5e0",
-        "6647a64ca7f3ea00196bd5f1"
+        "6647a64ca7f3ea00196bd5d3",    
     ];
 
     const container = document.getElementById("pilots-container");
@@ -403,55 +400,40 @@
         </div>
 
         <div class="bg-white rounded-2xl p-8 shadow-lg">
-            
-            <div class="rounded-xl overflow-hidden h-96">
-    <iframe id="map-iframe" class="w-full h-full border-0"></iframe>
-</div>
 
-<script>
-document.addEventListener('DOMContentLoaded', async () => {
-    try {
-        const res = await fetch('/api/map-url');
-        const data = await res.json();
-        document.getElementById('map-iframe').src = data.url;
-    } catch (err) {
-        console.error('Erro ao carregar mapa:', err);
-    }
-});
-</script>
+            <div class="rounded-xl overflow-hidden h-96 mb-8">
+                <iframe id="map-iframe" class="w-full h-full border-0"></iframe>
+            </div>
 
-            <!-- 🔹 Estatísticas (permanece igual) -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-                <div class="text-center">
-    <div id="ongoingFlights" class="text-2xl font-bold text-sky-600 mb-1">0</div>
-    <p class="text-slate-600">Voos Ativos</p>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', async () => {
-    // Atualiza Voos Ativos
-    try {
-        const res = await fetch('/api/flights-ongoing');
-        const data = await res.json();
-        document.getElementById('ongoingFlights').textContent = data.totalResults;
-    } catch (err) {
-        console.error('Erro ao buscar voos ativos:', err);
-    }
-});
-</script>
-                <div class="text-center">
-                    <div class="text-2xl font-bold text-green-600 mb-1">23</div>
-                    <p class="text-slate-600">Pilotos Online</p>
-                </div>
-                <div class="text-center">
-                    <div class="text-2xl font-bold text-purple-600 mb-1">156</div>
-                    <p class="text-slate-600">Horas Hoje</p>
+            <!-- Card centralizado -->
+            <div class="flex justify-center mt-8">
+                <div class="flex flex-col justify-center items-center text-center bg-slate-50 rounded-xl p-6 shadow-md w-48">
+                    <div id="ongoingFlights" class="text-3xl font-bold text-sky-600 mb-2">?</div>
+                    <p class="text-slate-600">Voos Ativos</p>
                 </div>
             </div>
+
         </div>
     </div>
-</section>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                // Carrega iframe do mapa
+                const res = await fetch('/api/map-url');
+                const data = await res.json();
+                document.getElementById('map-iframe').src = data.url;
+
+                // Atualiza Voos Ativos
+                const flightsRes = await fetch('/api/flights-ongoing');
+                const flightsData = await flightsRes.json();
+                document.getElementById('ongoingFlights').textContent = flightsData.totalResults;
+            } catch (err) {
+                console.error('Erro ao carregar dados:', err);
+            }
+        });
+    </script>
+</section>
 
     <!-- Footer -->
     <footer class="bg-slate-800 text-white py-16">
