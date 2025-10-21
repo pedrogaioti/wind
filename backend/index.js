@@ -37,6 +37,23 @@ app.get('/api/map-url', (req, res) => {
     res.json({ url });
 });
 
+// Rota para retornar Voos Ativos sem expor token
+app.get('/api/flights-ongoing', async (req, res) => {
+    try {
+        const response = await fetch('https://newsky.app/api/airline-api/flights/ongoing', {
+            headers: {
+                'Authorization': `Bearer ${NEWSKY_API_TOKEN}`
+            }
+        });
+        const data = await response.json();
+        res.json({ totalResults: data.totalResults || 0, results: data.results || [] });
+    } catch (err) {
+        console.error('Erro ao buscar voos ativos:', err);
+        res.status(500).json({ error: 'Não foi possível buscar os voos ativos' });
+    }
+});
+
+
 // Serve a página principal
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../frontend/index.html'));

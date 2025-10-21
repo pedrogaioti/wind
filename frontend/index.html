@@ -473,9 +473,22 @@ document.addEventListener('DOMContentLoaded', async () => {
             <!-- 🔹 Estatísticas (permanece igual) -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
                 <div class="text-center">
-                    <div class="text-2xl font-bold text-sky-600 mb-1">7</div>
-                    <p class="text-slate-600">Voos Ativos</p>
-                </div>
+    <div id="ongoingFlights" class="text-2xl font-bold text-sky-600 mb-1">0</div>
+    <p class="text-slate-600">Voos Ativos</p>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', async () => {
+    // Atualiza Voos Ativos
+    try {
+        const res = await fetch('/api/flights-ongoing');
+        const data = await res.json();
+        document.getElementById('ongoingFlights').textContent = data.totalResults;
+    } catch (err) {
+        console.error('Erro ao buscar voos ativos:', err);
+    }
+});
+</script>
                 <div class="text-center">
                     <div class="text-2xl font-bold text-green-600 mb-1">23</div>
                     <p class="text-slate-600">Pilotos Online</p>
