@@ -53,6 +53,51 @@ app.get('/api/flights-ongoing', async (req, res) => {
     }
 });
 
+// Rota para buscar pilotos com detalhes (nome, horas de voo, código...)
+// Rota para buscar vários pilotos pelo ID
+app.get('/api/pilots/multiple', async (req, res) => {
+    const idsParam = req.query.ids; // exemplo: ?ids=123,456,789
+
+    if (!idsParam) {
+        return res.status(400).json({ error: 'É necessário informar ao menos um ID de piloto' });
+    }
+
+    const pilotIds = idsParam.split(',').map(id => id.trim());
+
+    try {
+        const pilotsDetailed = await Promise.all(
+            pilotIds.map(async (id) => {
+                const response = await fetch(`https://beta.newsky.app/api/airline-api/pilot/${id}`, {
+                    headers: { 'Authorization': `Bearer ${NEWSKY_API_TOKEN}` }
+                });
+
+                if (!response.ok) {
+                    const text = await response.text();
+                    console.error(`Erro ao buscar piloto ${id}:`, text);
+                    return { id, error: 'Não foi possível buscar esse piloto' };
+                }
+
+                const data = await response.json();
+                return {
+                    id,
+                    name: data.pilot.fullname,
+                    callsign: data.pilot.callsign || "WIN000",
+                    hours: data.pilot.statsTotal.time,
+                    flights: data.pilot.statsTotal.flights,
+                    rating: data.pilot.statsTotal.rating,
+                    lastFlight: data.pilot.statsTotal.lastFlightDate
+                };
+            })
+        );
+
+        res.json({ pilots: pilotsDetailed });
+
+    } catch (err) {
+        console.error('Erro ao buscar pilotos:', err);
+        res.status(500).json({ error: 'Erro interno ao buscar pilotos' });
+    }
+});
+
 
 // Serve a página principal
 app.get('/', (req, res) => {
@@ -66,10 +111,6 @@ app.use((req, res) => {
         message: 'Rota não encontrada'
     });
 });
-
-/* ===============================================
-   INICIAR SERVIDOR
-   =============================================== */
 
 app.listen(PORT, () => {
     console.log('\n' + '='.repeat(50));
