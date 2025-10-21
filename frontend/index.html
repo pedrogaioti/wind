@@ -445,60 +445,42 @@
     </section>
 
     <!-- Live Map Section -->
-    <section id="livemap" class="py-20">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-slate-800 mb-4">Mapa ao Vivo</h2>
-                <p class="text-xl text-slate-600">Acompanhe nossos voos em tempo real</p>
+<section id="livemap" class="py-20">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold text-slate-800 mb-4">Mapa ao Vivo</h2>
+            <p class="text-xl text-slate-600">Acompanhe nossos voos em tempo real</p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-8 shadow-lg">
+            
+            <!-- 🔹 MAPA REAL (substituiu o bloco animado anterior) -->
+            <div class="rounded-xl overflow-hidden h-96">
+                <iframe 
+                    src="http://newsky.app/airline/public/map?style=light&token=WIN_ZjRAtR5G7odFJzN3lbp0mTLzp3YDx7"
+                    class="w-full h-full border-0">
+                </iframe>
             </div>
 
-            <div class="bg-white rounded-2xl p-8 shadow-lg">
-                <div class="bg-gradient-to-br from-slate-100 to-slate-200 rounded-xl h-96 flex items-center justify-center relative overflow-hidden">
-                    <div class="text-center z-10">
-                        <div class="w-20 h-20 bg-gradient-to-br from-sky-400 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-map-marked-alt text-white text-3xl"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-slate-700 mb-2">Mapa Interativo</h3>
-                        <p class="text-slate-600 mb-4">Integração com Newsky API para rastreamento em tempo real</p>
-                        <div class="inline-flex items-center space-x-2 bg-sky-100 text-sky-700 px-4 py-2 rounded-full">
-                            <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                            <span class="font-medium">Sistema Online</span>
-                        </div>
-                    </div>
-
-                    <div class="absolute inset-0 opacity-20">
-                        <svg class="w-full h-full" viewBox="0 0 400 300">
-                            <path d="M50 150 Q200 50 350 150" stroke="#0ea5e9" stroke-width="2" fill="none" stroke-dasharray="5,5">
-                                <animate attributeName="stroke-dashoffset" values="0;10" dur="2s" repeatCount="indefinite" />
-                            </path>
-                            <path d="M100 100 Q250 200 380 120" stroke="#0ea5e9" stroke-width="2" fill="none" stroke-dasharray="5,5">
-                                <animate attributeName="stroke-dashoffset" values="0;10" dur="3s" repeatCount="indefinite" />
-                            </path>
-                            <circle cx="80" cy="150" r="4" fill="#0ea5e9" />
-                            <circle cx="320" cy="150" r="4" fill="#0ea5e9" />
-                            <circle cx="150" cy="100" r="4" fill="#0ea5e9" />
-                            <circle cx="350" cy="120" r="4" fill="#0ea5e9" />
-                        </svg>
-                    </div>
+            <!-- 🔹 Estatísticas (permanece igual) -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+                <div class="text-center">
+                    <div class="text-2xl font-bold text-sky-600 mb-1">7</div>
+                    <p class="text-slate-600">Voos Ativos</p>
                 </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-                    <div class="text-center">
-                        <div class="text-2xl font-bold text-sky-600 mb-1">7</div>
-                        <p class="text-slate-600">Voos Ativos</p>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-2xl font-bold text-green-600 mb-1">23</div>
-                        <p class="text-slate-600">Pilotos Online</p>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-2xl font-bold text-purple-600 mb-1">156</div>
-                        <p class="text-slate-600">Horas Hoje</p>
-                    </div>
+                <div class="text-center">
+                    <div class="text-2xl font-bold text-green-600 mb-1">23</div>
+                    <p class="text-slate-600">Pilotos Online</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-2xl font-bold text-purple-600 mb-1">156</div>
+                    <p class="text-slate-600">Horas Hoje</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
 
     <!-- Footer -->
     <footer class="bg-slate-800 text-white py-16">
