@@ -26,10 +26,6 @@ app.use(express.json());
 // Servir arquivos estáticos do frontend
 app.use(express.static(path.join(__dirname, '../frontend')));
 
-/* ===============================================
-   ROTAS SIMPLES DE API
-   =============================================== */
-
 // Health check
 app.get('/api/health', (req, res) => {
     res.send('OK');

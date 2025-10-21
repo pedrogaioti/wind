@@ -454,13 +454,21 @@
 
         <div class="bg-white rounded-2xl p-8 shadow-lg">
             
-            <!-- 🔹 MAPA REAL (substituiu o bloco animado anterior) -->
             <div class="rounded-xl overflow-hidden h-96">
-                <iframe 
-                    src="http://newsky.app/airline/public/map?style=light&token=WIN_ZjRAtR5G7odFJzN3lbp0mTLzp3YDx7"
-                    class="w-full h-full border-0">
-                </iframe>
-            </div>
+    <iframe id="map-iframe" class="w-full h-full border-0"></iframe>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', async () => {
+    try {
+        const res = await fetch('/api/map-url');
+        const data = await res.json();
+        document.getElementById('map-iframe').src = data.url;
+    } catch (err) {
+        console.error('Erro ao carregar mapa:', err);
+    }
+});
+</script>
 
             <!-- 🔹 Estatísticas (permanece igual) -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
