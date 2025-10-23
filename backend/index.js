@@ -9,6 +9,8 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const AIRLINE_CODE = process.env.AIRLINE_CODE;
 const NEWSKY_API_TOKEN = process.env.NEWSKY_API_TOKEN;
+const NEWSKY_API_BASE_URL = process.env.NEWSKY_API_BASE_URL;  // ex.: https://newsky.app/api/airline-api
+const API_TIMEOUT = Number(process.env.API_TIMEOUT || 10000);
 const ALLOWED_ORIGINS = process.env.ALLOWED_ORIGINS.split(',');
 
 // Middlewares
@@ -33,8 +35,8 @@ app.get('/api/health', (req, res) => {
 
 // Rota para retornar URL do iframe sem expor o token
 app.get('/api/map-url', (req, res) => {
-    const url = `http://newsky.app/airline/public/map?style=light&token=${NEWSKY_API_TOKEN}`;
-    res.json({ url });
+  const url = `https://newsky.app/airline/public/map?style=light&token=${NEWSKY_API_TOKEN}`;
+  res.json({ url });
 });
 
 // Rota para retornar Voos Ativos sem expor token
@@ -101,16 +103,22 @@ app.get('/api/pilots/multiple', async (req, res) => {
 
 // Serve a página principal
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../frontend/index.html'));
+  res.sendFile(path.join(__dirname, './frontend/index.html'));
+});
+
+// 🚀 Proxy para /api/newsky/flights/bydate
+app.post('/api/newsky/flights/bydate', async (req, res) => {
+  // (código do proxy que repassa para https://newsky.app/api/airline-api/flights/bydate)
 });
 
 // Rota fallback (404)
 app.use((req, res) => {
-    res.status(404).json({
-        success: false,
-        message: 'Rota não encontrada'
-    });
+  res.status(404).json({
+    success: false,
+    message: 'Rota não encontrada'
+  });
 });
+
 
 app.listen(PORT, () => {
     console.log('\n' + '='.repeat(50));
