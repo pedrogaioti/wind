@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pilotos - Wind Airways</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #e0f2fe, #bae6fd, #7dd3fc);
+            min-height: 100vh;
+        }
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        }
+        .rate-badge {
+            background-color: #22c55e;
+            color: white;
+            font-weight: bold;
+            padding: 0.25rem 0.6rem;
+            border-radius: 9999px;
+        }
+        .rate-badge.yellow { background-color: #eab308; }
+        .rate-badge.red { background-color: #ef4444; }
+    </style>
+</head>
+
+<body class="font-sans text-slate-800">
+    <!-- Header -->
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <img src="./assets/img/wind.png" alt="Wind Airways Logo" class="h-10">
+                <h1 class="text-2xl font-bold text-sky-700">Wind Airways</h1>
+            </div>
+            <nav class="space-x-6 text-slate-600">
+                <a href="#" class="hover:text-sky-700 font-medium">Centro de Operações</a>
+                <a href="#" class="hover:text-sky-700 font-medium">Sobre nós</a>
+                <a href="#" class="hover:text-sky-700 font-medium">Inscreva-se</a>
+                <a href="#" class="hover:text-sky-700 font-medium">Área do Piloto</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Pilots Section -->
+    <section id="pilots" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-slate-800 mb-4">Nosso Time</h2>
+                <p class="text-lg text-slate-600">Conheça os pilotos oficiais da Wind Airways</p>
+            </div>
+
+            <div class="overflow-x-auto bg-white rounded-2xl shadow-xl p-6">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-sky-100 text-sky-800">
+                            <th class="p-3">Piloto</th>
+                            <th class="p-3">Data de Cadastro</th>
+                            <th class="p-3">IVAO ID</th>
+                            <th class="p-3">Callsign</th>
+                            <th class="p-3">Rank</th>
+                            <th class="p-3 text-center">Voos</th>
+                            <th class="p-3 text-center">Horas</th>
+                            <th class="p-3 text-center">Landings</th>
+                            <th class="p-3 text-center">Rate</th>
+                        </tr>
+                    </thead>
+                    <tbody id="pilots-table" class="divide-y divide-slate-200">
+                        <tr><td colspan="9" class="text-center py-6 text-slate-500">Carregando pilotos...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const pilotIds = ["6647a64ca7f3ea00196bd5d3", "66363f1ca0d61908f22e80b7","6646c139a7f3ea00195c32db"];
+        const table = document.getElementById("pilots-table");
+
+        async function loadPilots() {
+            try {
+                const response = await fetch(`/api/pilots/multiple?ids=${pilotIds.join(',')}`);
+                const data = await response.json();
+
+                if (!data.pilots || data.pilots.length === 0) {
+                    table.innerHTML = `<tr><td colspan="9" class="text-center py-6 text-slate-500">Nenhum piloto encontrado.</td></tr>`;
+                    return;
+                }
+
+                table.innerHTML = "";
+
+                data.pilots.forEach(pilot => {
+                    if (pilot.error) return;
+
+                    const rateColor =
+                        pilot.rate >= 9 ? "green" :
+                        pilot.rate >= 8 ? "yellow" : "red";
+
+                    const row = `
+                        <tr class="hover:bg-slate-50 transition">
+                            <td class="p-3 flex items-center space-x-3">
+                                <img src="${pilot.avatar || 'https://cdn-icons-png.flaticon.com/512/194/194938.png'}" class="w-10 h-10 rounded-full border">
+                                <span class="font-semibold">${pilot.name}</span>
+                            </td>
+                            <td class="p-3 text-slate-500">${pilot.joinDate || '—'}</td>
+                            <td class="p-3">${pilot.ivao || '—'}</td>
+                            <td class="p-3 font-medium text-sky-700">${pilot.callsign || '—'}</td>
+                            <td class="p-3 text-slate-600">${pilot.rank || '—'}</td>
+                            <td class="p-3 text-center">${pilot.flights || 0}</td>
+                            <td class="p-3 text-center">${pilot.hours || '0h'}</td>
+                            <td class="p-3 text-center">${pilot.landings || '-'} fpm</td>
+                            <td class="p-3 text-center">
+                                <span class="rate-badge ${rateColor}">${pilot.rate || '—'}</span>
+                            </td>
+                        </tr>
+                    `;
+
+                    table.innerHTML += row;
+                });
+
+            } catch (error) {
+                console.error("Erro ao carregar pilotos:", error);
+                table.innerHTML = `<tr><td colspan="9" class="text-center py-6 text-red-500">Erro ao carregar pilotos.</td></tr>`;
+            }
+        }
+
+        loadPilots();
+    </script>
+</body>
+</html>

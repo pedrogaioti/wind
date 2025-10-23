@@ -5,17 +5,17 @@
 
 /* Gradiente de fundo */
 .gradient-bg {
-    background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 50%, #7dd3fc 100%);
+    background: linear-gradient(135deg, #C1D4E3 0%, #FEFEFE 50%, #C1D4E3 100%);
     min-height: 100vh;
 }
 
 /* Animações de nuvens */
 .cloud {
     position: absolute;
-    background: white;
-    border-radius: 100px;
-    opacity: 0.7;
-    animation: float-cloud 60s linear infinite;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50px;
+    opacity: 0.6;
+    animation: drift 20s infinite linear;
 }
 
 .cloud::before,

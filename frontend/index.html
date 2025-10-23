@@ -30,16 +30,12 @@
             <div class="flex items-center justify-between">
                 <div class="flex items-center space-x-3">
                     <img src="./assets/img/wind.png" alt="Wind Airways Logo" class="w-12 h-12 rounded-lg shadow-md">
-                    <div>
-                        <h1 class="text-2xl font-bold text-slate-800">Wind Airways</h1>
-                        <p class="text-sm text-slate-500">Virtual Airline</p>
-                    </div>
                 </div>
 
                 <div class="hidden md:flex space-x-8">
                     <a href="#home" class="nav-link text-slate-700 hover:text-sky-600 font-medium">Home</a>
                     <a href="#fleet" class="nav-link text-slate-700 hover:text-sky-600 font-medium">Frota</a>
-                    <a href="#pilots" class="nav-link text-slate-700 hover:text-sky-600 font-medium">Pilotos</a>
+                    <a href="pages/pilots.html" class="nav-link text-slate-700 hover:text-sky-600 font-medium">Pilotos</a>
                     <a href="#statistics" class="nav-link text-slate-700 hover:text-sky-600 font-medium">Estatísticas</a>
                     <a href="#livemap" class="nav-link text-slate-700 hover:text-sky-600 font-medium">Mapa ao Vivo</a>
                 </div>
@@ -85,123 +81,7 @@
         </div>
     </section>
 
-    <!-- Fleet Section -->
-    <section id="fleet" class="py-20 bg-white/50">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-slate-800 mb-4">Nossa Frota</h2>
-                <p class="text-xl text-slate-600">Aeronaves modernas para todas as suas necessidades de voo</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-                <!-- A320neo -->
-                <div class="card-hover bg-white rounded-2xl p-6 shadow-lg">
-                    <div class="w-16 h-16 bg-gradient-to-br from-sky-400 to-blue-600 rounded-xl flex items-center justify-center mb-4">
-                        <i class="fas fa-plane text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-800 mb-2">Airbus A320neo</h3>
-                    <p class="text-slate-600 mb-4">Voos de médio curso com eficiência máxima</p>
-                    <div class="flex justify-between text-sm text-slate-500">
-                        <span><i class="fas fa-users mr-1"></i>180 pax</span>
-                        <span><i class="fas fa-route mr-1"></i>6.500 km</span>
-                    </div>
-                </div>
-
-                <!-- B737-800 -->
-                <div class="card-hover bg-white rounded-2xl p-6 shadow-lg">
-                    <div class="w-16 h-16 bg-gradient-to-br from-sky-400 to-blue-600 rounded-xl flex items-center justify-center mb-4">
-                        <i class="fas fa-plane text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-800 mb-2">Boeing 737-800</h3>
-                    <p class="text-slate-600 mb-4">Confiabilidade comprovada em rotas domésticas</p>
-                    <div class="flex justify-between text-sm text-slate-500">
-                        <span><i class="fas fa-users mr-1"></i>189 pax</span>
-                        <span><i class="fas fa-route mr-1"></i>5.765 km</span>
-                    </div>
-                </div>
-
-                <!-- B787-9 -->
-                <div class="card-hover bg-white rounded-2xl p-6 shadow-lg">
-                    <div class="w-16 h-16 bg-gradient-to-br from-sky-400 to-blue-600 rounded-xl flex items-center justify-center mb-4">
-                        <i class="fas fa-plane text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-800 mb-2">Boeing 787-9</h3>
-                    <p class="text-slate-600 mb-4">Dreamliner para voos intercontinentais</p>
-                    <div class="flex justify-between text-sm text-slate-500">
-                        <span><i class="fas fa-users mr-1"></i>296 pax</span>
-                        <span><i class="fas fa-route mr-1"></i>14.140 km</span>
-                    </div>
-                </div>
-
-                <!-- B777-300ER -->
-                <div class="card-hover bg-white rounded-2xl p-6 shadow-lg">
-                    <div class="w-16 h-16 bg-gradient-to-br from-sky-400 to-blue-600 rounded-xl flex items-center justify-center mb-4">
-                        <i class="fas fa-plane text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-800 mb-2">Boeing 777-300ER</h3>
-                    <p class="text-slate-600 mb-4">Longo alcance com máximo conforto</p>
-                    <div class="flex justify-between text-sm text-slate-500">
-                        <span><i class="fas fa-users mr-1"></i>396 pax</span>
-                        <span><i class="fas fa-route mr-1"></i>13.649 km</span>
-                    </div>
-                </div>
-
-                <!-- CJ4 -->
-                <div class="card-hover bg-white rounded-2xl p-6 shadow-lg">
-                    <div class="w-16 h-16 bg-gradient-to-br from-sky-400 to-blue-600 rounded-xl flex items-center justify-center mb-4">
-                        <i class="fas fa-fighter-jet text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-800 mb-2">Cessna Citation CJ4</h3>
-                    <p class="text-slate-600 mb-4">Jato executivo para voos premium</p>
-                    <div class="flex justify-between text-sm text-slate-500">
-                        <span><i class="fas fa-users mr-1"></i>9 pax</span>
-                        <span><i class="fas fa-route mr-1"></i>3.704 km</span>
-                    </div>
-                </div>
-
-                <!-- ATR 72-600 -->
-                <div class="card-hover bg-white rounded-2xl p-6 shadow-lg">
-                    <div class="w-16 h-16 bg-gradient-to-br from-sky-400 to-blue-600 rounded-xl flex items-center justify-center mb-4">
-                        <i class="fas fa-plane text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-800 mb-2">ATR 72-600</h3>
-                    <p class="text-slate-600 mb-4">Turboélice para rotas regionais</p>
-                    <div class="flex justify-between text-sm text-slate-500">
-                        <span><i class="fas fa-users mr-1"></i>78 pax</span>
-                        <span><i class="fas fa-route mr-1"></i>1.665 km</span>
-                    </div>
-                </div>
-
-                <!-- A306F -->
-                <div class="card-hover bg-white rounded-2xl p-6 shadow-lg">
-                    <div class="w-16 h-16 bg-gradient-to-br from-sky-400 to-blue-600 rounded-xl flex items-center justify-center mb-4">
-                        <i class="fas fa-shipping-fast text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-800 mb-2">Airbus A300-600F</h3>
-                    <p class="text-slate-600 mb-4">Cargueiro para transporte de carga</p>
-                    <div class="flex justify-between text-sm text-slate-500">
-                        <span><i class="fas fa-weight-hanging mr-1"></i>54t cargo</span>
-                        <span><i class="fas fa-route mr-1"></i>7.500 km</span>
-                    </div>
-                </div>
-
-                <!-- Slot para expansão -->
-                <div class="card-hover bg-gradient-to-br from-slate-100 to-slate-200 rounded-2xl p-6 shadow-lg border-2 border-dashed border-slate-300">
-                    <div class="w-16 h-16 bg-slate-300 rounded-xl flex items-center justify-center mb-4">
-                        <i class="fas fa-plus text-slate-500 text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-600 mb-2">Em Breve</h3>
-                    <p class="text-slate-500 mb-4">Novas aeronaves chegando à frota</p>
-                    <div class="flex justify-between text-sm text-slate-400">
-                        <span><i class="fas fa-clock mr-1"></i>Em breve</span>
-                        <span><i class="fas fa-star mr-1"></i>Novidade</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pilots Section -->
+        <!-- Pilots Section -->
 <section id="pilots" class="py-20">
     <div class="container mx-auto px-6">
         <div class="text-center mb-16">
@@ -218,7 +98,12 @@
 <script>
     // IDs dos pilotos que queremos mostrar
     const pilotIds = [
-        "6647a64ca7f3ea00196bd5d3",    
+        "6647a64ca7f3ea00196bd5d3", 
+        "66363f1ca0d61908f22e80b7",
+        "666ce71eed19d758f7d05147",
+        "666f31b2ed19d758f7ffb907",
+        "681d7108dac6dc5765b884fe",
+        "6646c139a7f3ea00195c32db"        
     ];
 
     const container = document.getElementById("pilots-container");
@@ -317,80 +202,7 @@
                     <p class="text-slate-600 font-medium">Rotas Ativas</p>
                 </div>
             </div>
-
-            <!-- Ranking Section -->
-            <div class="bg-white rounded-2xl p-8 shadow-lg">
-                <h3 class="text-2xl font-bold text-slate-800 mb-6 text-center">Ranking de Pilotos</h3>
-                <div class="overflow-x-auto">
-                    <table class="w-full">
-                        <thead>
-                            <tr class="border-b border-slate-200">
-                                <th class="text-left py-3 px-4 font-semibold text-slate-700">Posição</th>
-                                <th class="text-left py-3 px-4 font-semibold text-slate-700">Piloto</th>
-                                <th class="text-left py-3 px-4 font-semibold text-slate-700">ID</th>
-                                <th class="text-left py-3 px-4 font-semibold text-slate-700">Horas</th>
-                                <th class="text-left py-3 px-4 font-semibold text-slate-700">Voos</th>
-                                <th class="text-left py-3 px-4 font-semibold text-slate-700">Pontos</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="border-b border-slate-100 hover:bg-slate-50">
-                                <td class="py-3 px-4">
-                                    <span class="inline-flex items-center justify-center w-8 h-8 bg-yellow-500 text-white rounded-full font-bold">1</span>
-                                </td>
-                                <td class="py-3 px-4 font-medium text-slate-800">Comandante Santos</td>
-                                <td class="py-3 px-4 text-sky-600">WIN002</td>
-                                <td class="py-3 px-4 text-slate-600">3.120h</td>
-                                <td class="py-3 px-4 text-slate-600">487</td>
-                                <td class="py-3 px-4 text-slate-600">9.850</td>
-                            </tr>
-                            <tr class="border-b border-slate-100 hover:bg-slate-50">
-                                <td class="py-3 px-4">
-                                    <span class="inline-flex items-center justify-center w-8 h-8 bg-slate-400 text-white rounded-full font-bold">2</span>
-                                </td>
-                                <td class="py-3 px-4 font-medium text-slate-800">Piloto Ferreira</td>
-                                <td class="py-3 px-4 text-sky-600">WIN006</td>
-                                <td class="py-3 px-4 text-slate-600">2.980h</td>
-                                <td class="py-3 px-4 text-slate-600">421</td>
-                                <td class="py-3 px-4 text-slate-600">8.740</td>
-                            </tr>
-                            <tr class="border-b border-slate-100 hover:bg-slate-50">
-                                <td class="py-3 px-4">
-                                    <span class="inline-flex items-center justify-center w-8 h-8 bg-amber-600 text-white rounded-full font-bold">3</span>
-                                </td>
-                                <td class="py-3 px-4 font-medium text-slate-800">Capitã Costa</td>
-                                <td class="py-3 px-4 text-sky-600">WIN004</td>
-                                <td class="py-3 px-4 text-slate-600">2.760h</td>
-                                <td class="py-3 px-4 text-slate-600">398</td>
-                                <td class="py-3 px-4 text-slate-600">7.920</td>
-                            </tr>
-                            <tr class="border-b border-slate-100 hover:bg-slate-50">
-                                <td class="py-3 px-4">
-                                    <span class="inline-flex items-center justify-center w-8 h-8 bg-slate-300 text-slate-700 rounded-full font-bold">4</span>
-                                </td>
-                                <td class="py-3 px-4 font-medium text-slate-800">Capitão Silva</td>
-                                <td class="py-3 px-4 text-sky-600">WIN001</td>
-                                <td class="py-3 px-4 text-slate-600">2.450h</td>
-                                <td class="py-3 px-4 text-slate-600">356</td>
-                                <td class="py-3 px-4 text-slate-600">7.120</td>
-                            </tr>
-                            <tr class="hover:bg-slate-50">
-                                <td class="py-3 px-4">
-                                    <span class="inline-flex items-center justify-center w-8 h-8 bg-slate-300 text-slate-700 rounded-full font-bold">5</span>
-                                </td>
-                                <td class="py-3 px-4 font-medium text-slate-800">Capitão Rocha</td>
-                                <td class="py-3 px-4 text-sky-600">WIN007</td>
-                                <td class="py-3 px-4 text-slate-600">2.210h</td>
-                                <td class="py-3 px-4 text-slate-600">312</td>
-                                <td class="py-3 px-4 text-slate-600">6.540</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </section>
-
+            
     <!-- Live Map Section -->
 <section id="livemap" class="py-20">
     <div class="container mx-auto px-6">
@@ -445,11 +257,11 @@
                             <i class="fas fa-plane text-white"></i>
                         </div>
                         <div>
-                            <h3 class="text-xl font-bold">Wind Airways</h3>
+                            <h3 class="text-xl font-bold">Wind</h3>
                             <p class="text-slate-400 text-sm">Virtual Airline</p>
                         </div>
                     </div>
-                    <p class="text-slate-400 mb-4">Experiência profissional em aviação virtual com homologação IVAO e VATSIM.</p>
+                    <p class="text-slate-400 mb-4">Experiência profissional em aviação virtual.</p>
                 </div>
 
                 <div>
@@ -457,7 +269,7 @@
                     <ul class="space-y-2">
                         <li><a href="#home" class="text-slate-400 hover:text-sky-400 transition-colors">Home</a></li>
                         <li><a href="#fleet" class="text-slate-400 hover:text-sky-400 transition-colors">Frota</a></li>
-                        <li><a href="#pilots" class="text-slate-400 hover:text-sky-400 transition-colors">Pilotos</a></li>
+                        <li><a href="pages/pilots.html" class="text-slate-400 hover:text-sky-400 transition-colors">Pilotos</a></li>
                         <li><a href="#statistics" class="text-slate-400 hover:text-sky-400 transition-colors">Estatísticas</a></li>
                     </ul>
                 </div>
@@ -486,17 +298,11 @@
                 <div>
                     <h4 class="text-lg font-semibold mb-4">Redes Sociais</h4>
                     <div class="flex space-x-4">
-                        <a href="#" class="w-10 h-10 bg-slate-700 rounded-full flex items-center justify-center hover:bg-sky-600 transition-colors">
+                        <a href="https://discord.gg/uAa3GJvm" class="w-10 h-10 bg-slate-700 rounded-full flex items-center justify-center hover:bg-sky-600 transition-colors">
                             <i class="fab fa-discord"></i>
                         </a>
                         <a href="#" class="w-10 h-10 bg-slate-700 rounded-full flex items-center justify-center hover:bg-sky-600 transition-colors">
                             <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-slate-700 rounded-full flex items-center justify-center hover:bg-sky-600 transition-colors">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-slate-700 rounded-full flex items-center justify-center hover:bg-sky-600 transition-colors">
-                            <i class="fab fa-facebook"></i>
                         </a>
                     </div>
                 </div>
@@ -504,8 +310,8 @@
 
             <div class="border-t border-slate-700 pt-8 text-center">
                 <p class="text-slate-400">
-                    © 2024 Wind Airways Virtual Airline. Todos os direitos reservados.
-                    <span class="block mt-2">Homologada para IVAO e VATSIM | Powered by Newsky</span>
+                    © 2025 Wind Virtual Airline. Todos os direitos reservados.
+                    <span class="block mt-2">Em breve Homologada para IVAO e VATSIM | Powered by Newsky</span>
                 </p>
             </div>
         </div>
