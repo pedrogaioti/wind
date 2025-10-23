@@ -36,12 +36,14 @@
     <header class="bg-white shadow-lg sticky top-0 z-50">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <div class="flex items-center space-x-3">
-                <img src="./assets/img/wind.png" alt="Wind Airways Logo" class="h-10">
+                <a href="../index.html">
+                    <img src="../assets/img/wind.png" alt="Wind Airways Logo" class="h-10">
+                </a>
                 <h1 class="text-2xl font-bold text-sky-700">Wind Airways</h1>
             </div>
             <nav class="space-x-6 text-slate-600">
                 <a href="#" class="hover:text-sky-700 font-medium">Centro de Operações</a>
-                <a href="#" class="hover:text-sky-700 font-medium">Sobre nós</a>
+                <a href="./Sobre.html" class="hover:text-sky-700 font-medium">Sobre nós</a>
                 <a href="#" class="hover:text-sky-700 font-medium">Inscreva-se</a>
                 <a href="#" class="hover:text-sky-700 font-medium">Área do Piloto</a>
             </nav>
@@ -80,7 +82,12 @@
     </section>
 
     <script>
-        const pilotIds = ["6647a64ca7f3ea00196bd5d3", "66363f1ca0d61908f22e80b7","6646c139a7f3ea00195c32db"];
+        const pilotIds = ["6647a64ca7f3ea00196bd5d3", 
+        "66363f1ca0d61908f22e80b7",
+        "666ce71eed19d758f7d05147",
+        "666f31b2ed19d758f7ffb907",
+        "681d7108dac6dc5765b884fe",
+        "6646c139a7f3ea00195c32db" ];
         const table = document.getElementById("pilots-table");
 
         async function loadPilots() {
@@ -132,5 +139,77 @@
 
         loadPilots();
     </script>
+
+  <footer class="bg-slate-800 text-white py-16">
+    <div class="container mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <div class="flex items-center space-x-3 mb-4">
+            <div
+              class="w-10 h-10 bg-gradient-to-br from-sky-400 to-blue-600 rounded-full flex items-center justify-center">
+              <i class="fas fa-plane text-white"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold">Wind</h3>
+              <p class="text-slate-400 text-sm">Virtual Airline</p>
+            </div>
+          </div>
+          <p class="text-slate-400 mb-4">Experiência profissional em aviação virtual.</p>
+        </div>
+
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Links Rápidos</h4>
+          <ul class="space-y-2">
+            <li><a href="../index.html#home" class="text-slate-400 hover:text-sky-400 transition-colors">Home</a></li>
+            <li><a href="../index.html#fleet" class="text-slate-400 hover:text-sky-400 transition-colors">Frota</a></li>
+            <li><a href="../pages/pilots.html" class="text-slate-400 hover:text-sky-400 transition-colors">Pilotos</a></li>
+            <li><a href="../index.html#statistics" class="text-slate-400 hover:text-sky-400 transition-colors">Estatísticas</a></li>
+            <li><a href="../index.html#livemap" class="text-slate-400 hover:text-sky-400 transition-colors">Mapa ao Vivo</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Redes de Voo</h4>
+          <div class="space-y-3">
+            <a href="https://ivao.aero" target="_blank" rel="noopener noreferrer"
+              class="flex items-center space-x-3 text-slate-400 hover:text-sky-400 transition-colors">
+              <i class="fas fa-globe"></i>
+              <span>IVAO Network</span>
+            </a>
+            <a href="https://vatsim.net" target="_blank" rel="noopener noreferrer"
+              class="flex items-center space-x-3 text-slate-400 hover:text-sky-400 transition-colors">
+              <i class="fas fa-satellite-dish"></i>
+              <span>VATSIM Network</span>
+            </a>
+            <a href="https://newsky.app" target="_blank" rel="noopener noreferrer"
+              class="flex items-center space-x-3 text-slate-400 hover:text-sky-400 transition-colors">
+              <i class="fas fa-cloud"></i>
+              <span>Newsky Platform</span>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Redes Sociais</h4>
+          <div class="flex space-x-4">
+            <a href="https://discord.gg/uAa3GJvm" target="_blank" rel="noopener noreferrer"
+              class="w-10 h-10 bg-slate-700 rounded-full flex items-center justify-center hover:bg-sky-600 transition-colors">
+              <i class="fab fa-discord"></i>
+            </a>
+            <a href="#" class="w-10 h-10 bg-slate-700 rounded-full flex items-center justify-center hover:bg-sky-600 transition-colors">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-slate-700 pt-8 text-center">
+        <p class="text-slate-400">
+          © 2025 Wind Virtual Airline. Todos os direitos reservados.
+          <span class="block mt-2">Desenvolvido por LzGuimarães &amp; Pedro Gaioti</span>
+        </p>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
