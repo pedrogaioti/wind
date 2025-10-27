@@ -54,495 +54,227 @@
         </nav>
     </header>
 
- <!-- Hero Section -->
-<section id="home" class="relative min-h-[70vh] flex items-center justify-center py-20 overflow-hidden">
-  <!-- BG image -->
-  <div
-    class="absolute inset-0 bg-center bg-cover"
-    style="background-image: url('assets/img/hero.png');">
-  </div>
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-[70vh] flex items-center justify-center py-20 overflow-hidden">
+        <!-- BG image -->
+        <div class="absolute inset-0 bg-center bg-cover" style="background-image: url('assets/img/hero.png');">
+        </div>
 
-  <!-- Overlay para contraste -->
-  <div class="absolute inset-0 bg-slate-900/30"></div>
+        <!-- Overlay para contraste -->
+        <div class="absolute inset-0 bg-slate-900/30"></div>
 
-  <!-- Conteúdo -->
-  <div class="relative z-10 container mx-auto px-6 text-center">
-    <div class="slide-in">
-      <h1 class="text-5xl md:text-7xl font-bold text-white drop-shadow mb-6">
-        Bem-vindo à <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-300 to-blue-400">Wind</span>
-      </h1>
-      <p class="text-xl text-white/90 mb-12 max-w-3xl mx-auto">
-        Experimente a aviação virtual de forma profissional com nossa frota moderna e comunidade dedicada.
-        Em breve Homologada para IVAO e VATSIM.
-      </p>
-    </div>
+        <!-- Conteúdo -->
+        <div class="relative z-10 container mx-auto px-6 text-center">
+            <div class="slide-in">
+                <h1 class="text-5xl md:text-7xl font-bold text-white drop-shadow mb-6">
+                    Bem-vindo à <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-sky-300 to-blue-400">Wind</span>
+                </h1>
+                <p class="text-xl text-white/90 mb-12 max-w-3xl mx-auto">
+                    Experimente a aviação virtual de forma profissional com nossa frota moderna e comunidade dedicada.
+                    Em breve Homologada para IVAO e VATSIM.
+                </p>
+            </div>
 
-    
-  </div>
-</section>
 
-    <!-- Statistics Section -->
+        </div>
+    </section>
+
+    <!-- Statistics Section (Totais da Companhia via Newsky /airline) -->
     <section id="statistics" class="py-20 bg-white/50">
         <div class="container mx-auto px-6">
             <div class="text-center mb-8">
                 <h2 class="text-4xl font-bold text-slate-800 mb-4">Estatísticas da Companhia</h2>
-                <p class="text-xl text-slate-600">Números que demonstram nossa excelência operacional</p>
+                <p class="text-xl text-slate-600">
+                    Totais oficiais da VA (fonte: Newsky)
+                </p>
             </div>
 
-            <!-- Filtro de período -->
-            <div class="bg-white rounded-2xl p-4 md:p-6 shadow-lg mb-10">
-                <div class="flex flex-col md:flex-row items-stretch md:items-end md:space-x-4 space-y-3 md:space-y-0">
-                    <div class="flex-1">
-                        <label for="statsPeriod" class="block text-sm font-medium text-slate-600 mb-1">Período</label>
-                        <select id="statsPeriod"
-                            class="w-full rounded-xl border-slate-300 focus:ring-sky-500 focus:border-sky-500">
-                            <option value="this_month" selected>Este mês</option>
-                            <option value="last_month">Último mês</option>
-                            <option value="this_year">Ano atual</option>
-                            <option value="all_time">Histórico (todos os voos)</option>
-                            <option value="custom">Intervalo personalizado…</option>
-                        </select>
-                    </div>
-
-                    <div id="customRange" class="grid grid-cols-1 md:grid-cols-2 gap-3 flex-1 hidden">
-                        <div>
-                            <label for="dateFrom" class="block text-sm font-medium text-slate-600 mb-1">De</label>
-                            <input id="dateFrom" type="date"
-                                class="w-full rounded-xl border-slate-300 focus:ring-sky-500 focus:border-sky-500">
-                        </div>
-                        <div>
-                            <label for="dateTo" class="block text-sm font-medium text-slate-600 mb-1">Até</label>
-                            <input id="dateTo" type="date"
-                                class="w-full rounded-xl border-slate-300 focus:ring-sky-500 focus:border-sky-500">
-                        </div>
-                    </div>
-
-                    <button id="applyPeriod"
-                        class="inline-flex items-center justify-center bg-gradient-to-r from-sky-500 to-blue-600 text-white px-5 py-2.5 rounded-xl hover:from-sky-600 hover:to-blue-700 transition-all shadow-md">
-                        <i class="fas fa-rotate mr-2"></i> Aplicar
-                    </button>
-                </div>
-            </div>
-
-             <!-- GRID: Período selecionado -->
-            <div class="mb-3">
-                <h3 id="periodLabel" class="text-lg font-semibold text-slate-700">
-                    Estatísticas do período: <span class="text-sky-700">Este mês</span>
-                </h3>
-            </div>
+            <!-- GRID: Totais -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Total Flights (period) -->
-                <div class="bg-white rounded-2xl p-8 shadow-lg text-center">
-                    <div
-                        class="w-16 h-16 bg-gradient-to-br from-sky-400 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-calendar-check text-white text-2xl"></i>
-                    </div>
-                    <div class="text-4xl font-extrabold text-slate-800 leading-none stats-counter"
-                        id="totalFlightsPeriod">0</div>
-                    <p class="text-slate-600 font-medium">Voos no período</p>
+                <div id="cardFlights" class="bg-white rounded-2xl p-8 shadow-lg text-center">
+                    ...
+                    <div id="companyTotalFlights" class="text-4xl font-extrabold text-slate-800 leading-none">0</div>
+                    <p class="text-slate-600 font-medium">Voos (total)</p>
                 </div>
 
-                <!-- Flight Hours (period) -->
-                <div class="bg-white rounded-2xl p-8 shadow-lg text-center">
-                    <div
-                        class="w-16 h-16 bg-gradient-to-br from-sky-400 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-stopwatch text-white text-2xl"></i>
-                    </div>
-                    <div class="text-4xl font-extrabold text-slate-800 leading-none stats-counter"
-                        id="flightHoursPeriod">0</div>
-                    <p class="text-slate-600 font-medium">Horas no período</p>
+                <!-- Horas (total) -->
+                <div id="cardHours" class="bg-white rounded-2xl p-8 shadow-lg text-center">
+                    ...
+                    <div id="companyFlightHours" class="text-4xl font-extrabold text-slate-800 leading-none">0</div>
+                    <p class="text-slate-600 font-medium">Horas de voo (total)</p>
                 </div>
 
-                <!-- Active Pilots (period) -->
-                <div class="bg-white rounded-2xl p-8 shadow-lg text-center">
-                    <div
-                        class="w-16 h-16 bg-gradient-to-br from-sky-400 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-user-check text-white text-2xl"></i>
-                    </div>
-                    <div class="text-4xl font-extrabold text-slate-800 leading-none stats-counter"
-                        id="activePilotsPeriod">0</div>
-                    <p class="text-slate-600 font-medium">Pilotos no período</p>
+                <!-- Pilotos ativos -->
+                <div id="cardPilots" class="bg-white rounded-2xl p-8 shadow-lg text-center">
+                    ...
+                    <div id="companyPilotsActive" class="text-4xl font-extrabold text-slate-800 leading-none">0</div>
+                    <p class="text-slate-600 font-medium">Pilotos ativos</p>
                 </div>
 
-                <!-- Routes (period) -->
-                <div class="bg-white rounded-2xl p-8 shadow-lg text-center">
-                    <div
-                        class="w-16 h-16 bg-gradient-to-br from-sky-400 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-route text-white text-2xl"></i>
-                    </div>
-                    <div class="text-4xl font-extrabold text-slate-800 leading-none stats-counter" id="routesPeriod">0
-                    </div>
-                    <p class="text-slate-600 font-medium">Rotas no período</p>
+                <!-- Rotas -->
+                <div id="cardRoutes" class="bg-white rounded-2xl p-8 shadow-lg text-center">
+                    ...
+                    <div id="companyRoutes" class="text-4xl font-extrabold text-slate-800 leading-none">0</div>
+                    <p class="text-slate-600 font-medium">Rotas</p>
                 </div>
+
+                <!-- Aviso/erro -->
+                <p id="statsError" class="mt-6 text-center text-sm text-red-600 hidden"></p>
             </div>
-        </div>
 
-        <!-- Script específico das estatísticas (usa /api/newsky/flights/bydate no backend) -->
-        <script>
-            // ===== CONFIG =====
-            const PROXY_BYDATE = "/api/newsky/flights/bydate"; // seu backend deve repassar para https://newsky.app/api/airline-api/flights/bydate com o Bearer token
+            <script>
+                const PROXY_AIRLINE = "/api/newsky/airline";
+                const PROXY_BYDATE = "/api/newsky/flights/bydate";
+                const DAY_MS = 24 * 60 * 60 * 1000;
 
-            // ===== HELPERS DE DATA =====
-            const DAY_MS = 24 * 60 * 60 * 1000;
-
-            function startOfThisMonth() {
-                const now = new Date();
-                return new Date(now.getFullYear(), now.getMonth(), 1, 0, 0, 0);
-            }
-            function startOfLastMonth() {
-                const now = new Date();
-                return new Date(now.getFullYear(), now.getMonth() - 1, 1, 0, 0, 0);
-            }
-            function endOfLastMonth() {
-                const s = startOfThisMonth();
-                return new Date(s.getFullYear(), s.getMonth(), 0, 23, 59, 59, 999);
-            }
-            function startOfThisYear() {
-                const now = new Date();
-                return new Date(now.getFullYear(), 0, 1, 0, 0, 0);
-            }
-            function toDateOnlyString(d) {
-                const dt = new Date(d);
-                const y = dt.getFullYear();
-                const m = String(dt.getMonth() + 1).padStart(2, '0');
-                const da = String(dt.getDate()).padStart(2, '0');
-                return `${y}-${m}-${da}`;
-            }
-
-            // ===== EXTRAÇÃO E CÁLCULOS =====
-            // Chave de rota mais tolerante
-            function routeKey(f) {
-                const dep =
-                    f?.departure?.icao || f?.dep?.icao || f?.departureIcao || f?.depIcao || f?.from?.icao || "UNK";
-                const arr =
-                    f?.arrival?.icao || f?.arr?.icao || f?.arrivalIcao || f?.arrIcao || f?.to?.icao || "UNK";
-                return `${dep}-${arr}`;
-            }
-            function pilotId(f) {
-                return f?.pilot?._id || f?.pilotId || null;
-            }
-            // Lê a MELHOR data disponível no objeto do voo
-            function pickDate(f) {
-                // Ordem de prioridade (cobre respostas do /flights/bydate)
-                return (
-                    f?.depTimeAct ||
-                    f?.arrTimeAct ||
-                    f?.depTime ||           // alguns payloads usam isso
-                    f?.arrTime ||
-                    f?.depTimeSched ||
-                    f?.arrTimeSched ||
-                    f?.date ||              // às vezes vem 'date'
-                    f?.flightDate ||        // ou 'flightDate'
-                    f?.createdAt ||
-                    f?.updatedAt ||
-                    null
-                );
-            }
-            // Duração em horas (usa qualquer par de campos ou duration pronto)
-            function flightHours(f) {
-                if (typeof f?.duration === "number") return f.duration;
-                if (typeof f?.durationHours === "number") return f.durationHours;
-
-                const cands = [
-                    [f?.depTimeAct, f?.arrTimeAct],
-                    [f?.depTime, f?.arrTime],
-                    [f?.depTimeSched, f?.arrTimeSched]
-                ];
-                for (const [a, b] of cands) {
-                    if (a && b) {
-                        const dh = (new Date(b) - new Date(a)) / 36e5;
-                        if (Number.isFinite(dh) && dh > 0) return dh;
+                function animateCounter(id, value, duration = 900, decimals = 0) {
+                    const el = document.getElementById(id);
+                    if (!el) return;
+                    const start = performance.now();
+                    const from = 0;
+                    const to = Number(value) || 0;
+                    function frame(t) {
+                        const p = Math.min((t - start) / duration, 1);
+                        const cur = from + (to - from) * p;
+                        el.textContent = decimals ? cur.toFixed(decimals) : Math.floor(cur);
+                        if (p < 1) requestAnimationFrame(frame);
                     }
+                    requestAnimationFrame(frame);
                 }
-                return 0;
-            }
-            function computeStats(flights) {
-                const totalFlights = flights.length;
-                const totalHours = flights.reduce((s, f) => s + flightHours(f), 0);
-                const pilots = new Set(flights.map(pilotId).filter(Boolean));
-                const routes = new Set(flights.map(routeKey));
-                return { totalFlights, totalHours, pilotsCount: pilots.size, routesCount: routes.size };
-            }
 
-            function animateCounter(id, value, duration = 900, decimals = 0) {
-                const el = document.getElementById(id);
-                const startTime = performance.now();
-                function tick(now) {
-                    const p = Math.min((now - startTime) / duration, 1);
-                    const cur = p * value;
-                    el.textContent = decimals ? cur.toFixed(decimals) : Math.floor(cur);
-                    if (p < 1) requestAnimationFrame(tick);
-                }
-                requestAnimationFrame(tick);
-            }
-
-            // ======= CHAMADAS À API BY DATE (30 dias máx + paginação skip/count) =======
-            async function fetchWindow(start, end) {
-                // paginação dentro da janela
-                const out = [];
-                let skip = 0;
-                const count = 100; // máximo suportado
-                while (true) {
-                    const r = await fetch(PROXY_BYDATE, {
-                        method: "POST",
-                        headers: { "Content-Type": "application/json" },
-                        body: JSON.stringify({
-                            start: new Date(start).toISOString(),
-                            end: new Date(end).toISOString(),
-                            skip,
-                            count,
-                            includeDeleted: false
-                        })
-                    });
-                    if (!r.ok) throw new Error(`bydate HTTP ${r.status}`);
-                    const data = await r.json();
-                    const items = Array.isArray(data?.results) ? data.results : [];
-                    out.push(...items);
-                    if (items.length < count) break; // acabou a pagina dessa janela
-                    skip += count;
-                }
-                return out;
-            }
-            async function fetchFlightsForPeriod(start, end) {
-                const out = [];
-                let skip = 0;
-                const count = 100;
-                while (true) {
-                    const r = await fetch(PROXY_BYDATE, {
-                        method: "POST",
-                        headers: { "Content-Type": "application/json" },
-                        body: JSON.stringify({
-                            start: new Date(start).toISOString(),
-                            end: new Date(end).toISOString(),
-                            skip,
-                            count,
-                            includeDeleted: false
-                        })
-                    });
-                    if (!r.ok) throw new Error(`bydate (period) HTTP ${r.status}`);
-                    const data = await r.json();
-                    const items = Array.isArray(data?.results) ? data.results : [];
-                    out.push(...items);
-                    if (items.length < count) break;
-                    skip += count;
-                }
-                return out;
-            }
-
-
-            // Varre do voo mais recente até o primeiro, em janelas de 30 dias
-            async function fetchAllFlightsHistorical() {
-                // ...
-            }
-
-            // Varre do voo mais recente até o primeiro, em janelas de 30 dias
-            async function fetchAllFlightsHistorical() {
-                const all = [];
-                let end = new Date(); // agora (voo mais recente)
-                let windowsWithoutFlights = 0;
-                const MAX_WINDOWS = 200; // ~16 anos (200 * 30d)
-                for (let i = 0; i < MAX_WINDOWS; i++) {
-                    const start = new Date(end.getTime() - 29 * DAY_MS); // 30 dias de span (inclusive)
-                    const chunk = await fetchWindow(start, end);
-                    if (chunk.length === 0) {
-                        windowsWithoutFlights++;
-                        // se já achamos voos e temos 2 janelas sem nada, provavelmente passamos do "primeiro voo"
-                        if (all.length > 0 && windowsWithoutFlights >= 2) break;
-                    } else {
-                        windowsWithoutFlights = 0;
-                        all.push(...chunk);
+                function firstNumber(obj, paths, fallback = 0) {
+                    for (const path of paths) {
+                        const val = path.split(".").reduce((acc, k) => (acc && acc[k] != null) ? acc[k] : undefined, obj);
+                        if (typeof val === "number" && Number.isFinite(val)) return val;
+                        if (typeof val === "string" && val.trim() !== "" && !isNaN(Number(val))) return Number(val);
                     }
-                    // próxima janela: volta mais 30 dias (um milissegundo antes para não sobrepor)
-                    end = new Date(start.getTime() - 1);
-                }
-                // ordena por data do voo
-                all.sort((a, b) => new Date(pickDate(a)) - new Date(pickDate(b)));
-                return all;
-            }
-
-            function filterByPeriod(flights, period, fromDate = null, toDate = null) {
-                // Construímos janelas usando datas "locais", mas com inclusão do dia final
-                let start = null, end = null;
-
-                if (period === "this_month") {
-                    const base = new Date();
-                    start = new Date(base.getFullYear(), base.getMonth(), 1, 0, 0, 0);
-                    end = new Date(base.getFullYear(), base.getMonth() + 1, 1, 0, 0, 0);
-                } else if (period === "last_month") {
-                    const base = new Date();
-                    start = new Date(base.getFullYear(), base.getMonth() - 1, 1, 0, 0, 0);
-                    end = new Date(base.getFullYear(), base.getMonth(), 1, 0, 0, 0);
-                } else if (period === "this_year") {
-                    const y = (new Date()).getFullYear();
-                    start = new Date(y, 0, 1, 0, 0, 0);
-                    end = new Date(y + 1, 0, 1, 0, 0, 0);
-                } else if (period === "custom" && fromDate && toDate) {
-                    const s = new Date(fromDate);
-                    const t = new Date(toDate);
-                    start = new Date(s.getFullYear(), s.getMonth(), s.getDate(), 0, 0, 0);
-                    end = new Date(t.getFullYear(), t.getMonth(), t.getDate() + 1, 0, 0, 0); // inclui dia final
-                } else if (period === "all_time") {
-                    return flights;
+                    return fallback;
                 }
 
-                return flights.filter(f => {
-                    const dRaw = pickDate(f);
-                    if (!dRaw) return false;
-                    const d = new Date(dRaw);
-                    return d >= start && d < end;
-                });
-            }
-
-
-            function labelForPeriod(period, fromDate, toDate) {
-                if (period === "this_month") return `Este mês (${toDateOnlyString(startOfThisMonth())} → hoje)`;
-                if (period === "last_month") return `Último mês (${toDateOnlyString(startOfLastMonth())} → ${toDateOnlyString(endOfLastMonth())})`;
-                if (period === "this_year") return `Ano atual (desde ${toDateOnlyString(startOfThisYear())})`;
-                if (period === "all_time") return "Histórico (todos os voos)";
-                if (period === "custom" && fromDate && toDate) return `Personalizado (${fromDate} → ${toDate})`;
-                return "Período selecionado";
-            }
-
-            // ===== ESTADO =====
-            let ALL_FLIGHTS = [];
-            let LAST_KNOWN_DATE = null; // data do voo mais recente conhecido
-
-            async function initStats() {
-                try {
-                    // 1) carrega todo histórico (primeiro → mais recente) usando /bydate
-                    ALL_FLIGHTS = await fetchAllFlightsHistorical();
-                    if (ALL_FLIGHTS.length > 0) {
-                        LAST_KNOWN_DATE = new Date(pickDate(ALL_FLIGHTS[ALL_FLIGHTS.length - 1]));
-                    }
-
-                    // 2) Totais (histórico)
-                    const totals = computeStats(ALL_FLIGHTS);
-                    animateCounter("totalFlights", totals.totalFlights);
-                    animateCounter("flightHours", totals.totalHours, 900, 1);
-                    animateCounter("activePilots", totals.pilotsCount);
-                    animateCounter("routes", totals.routesCount);
-
-                    // 3) Período padrão: este mês
-                    applySelectedPeriod();
-
-                    // 4) Polling para atualizar a cada voo feito (checa últimos 2 dias a cada 3 min)
-                    setInterval(pollRecentFlights, 3 * 60 * 1000);
-                } catch (err) {
-                    console.error("Erro ao carregar estatísticas:", err);
+                function routeKey(f) {
+                    const dep = f?.departure?.icao || f?.dep?.icao || f?.departureIcao || f?.depIcao || f?.from?.icao || "UNK";
+                    const arr = f?.arrival?.icao || f?.arr?.icao || f?.arrivalIcao || f?.arrIcao || f?.to?.icao || "UNK";
+                    return `${dep}-${arr}`;
                 }
-            }
 
-            async function pollRecentFlights() {
-                try {
-                    const now = new Date();
-                    const start = new Date(now.getTime() - 2 * DAY_MS); // janelinha “recente”
-                    const recent = await fetchWindow(start, now);
-                    if (recent.length === 0) return;
+                function pickDate(f) {
+                    return f?.depTimeAct || f?.arrTimeAct || f?.depTime || f?.arrTime ||
+                        f?.depTimeSched || f?.arrTimeSched || f?.date || f?.flightDate ||
+                        f?.createdAt || f?.updatedAt || null;
+                }
 
-                    // Se acharmos voos com data > LAST_KNOWN_DATE, anexamos e reprocessamos
-                    let added = 0;
-                    for (const f of recent) {
-                        const d = new Date(pickDate(f));
-                        if (!LAST_KNOWN_DATE || d > LAST_KNOWN_DATE) {
-                            ALL_FLIGHTS.push(f);
-                            added++;
-                            if (!LAST_KNOWN_DATE || d > LAST_KNOWN_DATE) LAST_KNOWN_DATE = d;
+                function flightHours(f) {
+                    if (typeof f?.duration === "number") return f.duration;
+                    if (typeof f?.durationHours === "number") return f.durationHours;
+                    const pairs = [[f?.depTimeAct, f?.arrTimeAct], [f?.depTime, f?.arrTime], [f?.depTimeSched, f?.arrTimeSched]];
+                    for (const [a, b] of pairs) {
+                        if (a && b) {
+                            const h = (new Date(b) - new Date(a)) / 36e5;
+                            if (Number.isFinite(h) && h > 0) return h;
                         }
                     }
-                    if (added > 0) {
-                        // reordena e atualiza os cards
-                        ALL_FLIGHTS.sort((a, b) => new Date(pickDate(a)) - new Date(pickDate(b)));
-                        const totals = computeStats(ALL_FLIGHTS);
-                        animateCounter("totalFlights", totals.totalFlights);
-                        animateCounter("flightHours", totals.totalHours, 900, 1);
-                        animateCounter("activePilots", totals.pilotsCount);
-                        animateCounter("routes", totals.routesCount);
-                        applySelectedPeriod();
+                    return 0;
+                }
+
+                function computeFromFlights(flights) {
+                    const hours = flights.reduce((s, f) => s + flightHours(f), 0);
+                    const routes = new Set(flights.map(routeKey)).size;
+                    return { hours, routes };
+                }
+
+                async function fetchWindow(start, end) {
+                    const out = [];
+                    let skip = 0, count = 100;
+                    while (true) {
+                        const r = await fetch(PROXY_BYDATE, {
+                            method: "POST",
+                            headers: { "Content-Type": "application/json" },
+                            body: JSON.stringify({
+                                start: new Date(start).toISOString(),
+                                end: new Date(end).toISOString(),
+                                skip, count, includeDeleted: false
+                            })
+                        });
+                        if (!r.ok) throw new Error(`/bydate HTTP ${r.status}`);
+                        const data = await r.json();
+                        const items = Array.isArray(data?.results) ? data.results : [];
+                        out.push(...items);
+                        if (items.length < count) break;
+                        skip += count;
                     }
-                } catch (e) {
-                    console.warn("Polling recente falhou:", e);
-                }
-            }
-
-            async function applySelectedPeriod() {
-                const period = document.getElementById("statsPeriod").value;
-                const from = document.getElementById("dateFrom").value || null;
-                const to = document.getElementById("dateTo").value || null;
-
-                // calcula o intervalo (inclusivo) em horário local
-                let start, end;
-                if (period === "this_month") {
-                    const base = new Date();
-                    start = new Date(base.getFullYear(), base.getMonth(), 1, 0, 0, 0);
-                    end = new Date(base.getFullYear(), base.getMonth() + 1, 1, 0, 0, 0); // 1º do próximo mês
-                } else if (period === "last_month") {
-                    const base = new Date();
-                    start = new Date(base.getFullYear(), base.getMonth() - 1, 1, 0, 0, 0);
-                    end = new Date(base.getFullYear(), base.getMonth(), 1, 0, 0, 0);
-                } else if (period === "this_year") {
-                    const y = (new Date()).getFullYear();
-                    start = new Date(y, 0, 1, 0, 0, 0);
-                    end = new Date(y + 1, 0, 1, 0, 0, 0);
-                } else if (period === "custom" && from && to) {
-                    const s = new Date(from);
-                    const t = new Date(to);
-                    start = new Date(s.getFullYear(), s.getMonth(), s.getDate(), 0, 0, 0);
-                    end = new Date(t.getFullYear(), t.getMonth(), t.getDate() + 1, 0, 0, 0); // inclui o dia final
-                } else if (period === "all_time") {
-                    // para histórico, seguimos usando o cache local ALL_FLIGHTS (já carregado)
-                    const sAll = computeStats(ALL_FLIGHTS);
-                    animateCounter("totalFlightsPeriod", sAll.totalFlights);
-                    animateCounter("flightHoursPeriod", sAll.totalHours, 900, 1);
-                    animateCounter("activePilotsPeriod", sAll.pilotsCount);
-                    animateCounter("routesPeriod", sAll.routesCount);
-                    const labelAll = labelForPeriod(period, from, to);
-                    document.getElementById("periodLabel").innerHTML =
-                        `Estatísticas do período: <span class="text-sky-700">${labelAll}</span>`;
-                    return;
-                } else {
-                    // fallback
-                    start = new Date(0);
-                    end = new Date();
+                    return out;
                 }
 
-                try {
-                    // 👉 agora buscamos diretamente NA API só os voos do período
-                    const flightsPeriod = await fetchFlightsForPeriod(start, end);
-                    const s = computeStats(flightsPeriod);
-
-                    animateCounter("totalFlightsPeriod", s.totalFlights);
-                    animateCounter("flightHoursPeriod", s.totalHours, 900, 1);
-                    animateCounter("activePilotsPeriod", s.pilotsCount);
-                    animateCounter("routesPeriod", s.routesCount);
-
-                    const label = labelForPeriod(period, from, to);
-                    document.getElementById("periodLabel").innerHTML =
-                        `Estatísticas do período: <span class="text-sky-700">${label}</span>`;
-                } catch (err) {
-                    console.error("Erro período /bydate:", err);
+                async function fetchAllFlightsHistorical(maxWindows = 120) {
+                    const all = [];
+                    let end = new Date();
+                    let empty = 0;
+                    for (let i = 0; i < maxWindows; i++) {
+                        const start = new Date(end.getTime() - 29 * DAY_MS);
+                        const chunk = await fetchWindow(start, end);
+                        if (chunk.length === 0) {
+                            empty++;
+                            if (all.length > 0 && empty >= 2) break;
+                        } else {
+                            empty = 0;
+                            all.push(...chunk);
+                        }
+                        end = new Date(start.getTime() - 1);
+                    }
+                    all.sort((a, b) => new Date(pickDate(a)) - new Date(pickDate(b)));
+                    return all;
                 }
-            }
 
-            // ===== UI HANDLERS =====
-            (function bindUI() {
-                const sel = document.getElementById("statsPeriod");
-                const customBox = document.getElementById("customRange");
-                const applyBtn = document.getElementById("applyPeriod");
+                async function loadAirlineTotals() {
+                    const errEl = document.getElementById("statsError");
+                    try {
+                        // 1) Lê os totais do /airline (fonte oficial p/ Voos e Pilotos)
+                        const r = await fetch(PROXY_AIRLINE);
+                        if (!r.ok) throw new Error(`HTTP ${r.status}`);
+                        const data = await r.json();
 
-                sel.addEventListener("change", () => {
-                    if (sel.value === "custom") customBox.classList.remove("hidden");
-                    else customBox.classList.add("hidden");
-                });
+                        const flightsTotal = firstNumber(data, ["totals.flights", "airline.stats.flights"], 0); // <- 467
+                        const pilotsActive = firstNumber(data, ["totals.pilotsActive", "airline.stats.activePilots"], 0);
 
-                applyBtn.addEventListener("click", applySelectedPeriod);
-            })();
+                        // escreve JÁ os campos oficiais
+                        animateCounter("companyTotalFlights", flightsTotal);
+                        animateCounter("companyPilotsActive", pilotsActive);
 
-            // Boot
-            initStats();
-        </script>
+                        // 2) Horas e rotas: se vierem em branco, calculamos por /bydate
+                        const hoursFromApi = firstNumber(data, ["totals.hours", "airline.stats.hours"], 0);
+                        const routesFromApi = firstNumber(data, ["totals.routes", "airline.stats.routes"], 0);
+
+                        const needHours = !(hoursFromApi > 0);
+                        const needRoutes = !(routesFromApi > 0);
+
+                        if (!needHours) animateCounter("companyFlightHours", hoursFromApi, 900, 1);
+                        if (!needRoutes) animateCounter("companyRoutes", routesFromApi);
+
+                        if (needHours || needRoutes) {
+                            const flights = await fetchAllFlightsHistorical();
+                            const calc = computeFromFlights(flights);
+                            if (needHours) animateCounter("companyFlightHours", calc.hours, 900, 1);
+                            if (needRoutes) animateCounter("companyRoutes", calc.routes);
+                        }
+                    } catch (e) {
+                        if (errEl) {
+                            errEl.textContent = "Não foi possível carregar as estatísticas (airline/bydate).";
+                            errEl.classList.remove("hidden");
+                        }
+                        console.error(e);
+                    }
+                }
+
+                // Sinalizador para evitar que scripts antigos mexam nestes cards
+                window.WIND_STATS_COMPANY_LOCK = true;
+
+                loadAirlineTotals();
+            </script>
+
+
     </section>
 
-    
 
     <!-- Live Map Section -->
     <section id="livemap" class="py-20">
